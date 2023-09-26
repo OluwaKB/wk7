@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <input type="text" id="myInput" placeholder="Enter text">
+    <button id="mySubmitButton">Submit</button>
+
+    <input type="number" id="first" placeholder="Enter a number">
+    <input type="number" id="second" placeholder="Enter another number">
+    <p id="sumResult"></p>
+
+    <p class="myFav">This is my favorite.</p>
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        const myButton = document.getElementById("myButton");
+        myButton.addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+        const mySubmitButton = document.getElementById("mySubmitButton");
+        mySubmitButton.addEventListener("click", function() {
+            const inputValue = document.getElementById("myInput").value;
+            alert(`You entered: ${inputValue}`);
+        });
+        function calculateSum(num1, num2){
+            return num1 + num2;
+        }
+
+        const firstInput = parseFloat(document.getElementById("first").value);
+        const secondInput = parseFloat(document.getElementById("second").value);
+        const sumResult = calculateSum(firstInput, secondInput);
+        document.getElementById("sumResult").textContent = `Sum: ${sumResult}`;
+        
+        changeTextButton.addEventListener("click", function(){
+            const myFavElement = document.querySelector(".myFav");
+            myFavElement.textContent = "New text here!";
+        })
+        const getElementById = document.getElementById("changeTextButton");
+ 
+        document.addEventListener("keydown", function(event) {
+            alert(`Key code: ${event.keyCode}`);
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</body>
+<script>
+    const tues = document.querySelectorAll('li')
+    const students = new Array()
+    const absentStudents = ['samuel', 'tope'] 
+
+    students.push('victor', 'Ife')
+    students.push('michael')
+
+    tues[0].textContent = 'Push michael to array: '+ students
+
+    //add multiple students from an array
+    students.push(...absentStudents)
+    tues[1].innerHTML = '<strong>Add multiple students:<strong/> '+ students
+
+    //add iniubong at the beginning of the array
+    students.unshift('iniubong', 'miracle')
+    tues[2].innerHTML = '<strong>Add students at the beginning students:<strong/> '+ students
+            
+    //remove from the last
+    students.pop()
+    tues[3].innerHTML = '<strong>remove last student:<strong/> '+ students
+    
+    //remove the first
+    students.shift()
+    tues[4].innerHTML = '<strong>remove the first student:<strong/> '+ students
+
+    //make a copy of an array
+    let frontendStudents = students.slice()
+    tues[5].innerHTML = '<strong>Create another array:</strong> '+ frontendStudents 
+
+    //add samuel after victor
+    frontendStudents.splice(2,0, 'samuel')
+    tues[6].innerHTML = '<strong>Add another name:<strong/> '+ frontendStudents
+
+    //add two names  and remove two
+    frontendStudents.splice(3,2, 'badmus', 'franc')
+    tues[7].innerHTML = '<strong>Add more names and remove names:<strong/> '+ frontendStudents
+
+    //remove franc
+    frontendStudents.splice(frontendStudents.indexOf('franc'), 1)
+    tues[8].innerHTML = '<strong>remove franc:<strong/> '+ frontendStudents
+
+    //find if a name exists within an array
+    tues[9].innerHTML = '<strong>check if lizzy is in our class:<strong/> '+ frontendStudents
+    tues[10].innerHTML = '<strong>check if Victor is in our class:<strong/> '+ frontendStudents
+    tues[11].innerHTML = '<strong>check if victor is in our class:<strong/> '+ frontendStudents
+
+    //find a position of a name
+    tues[12].innerHTML = '<strong>find the position of samuel:<strong/> '+ frontendStudents.indexOf('samuel')
+
+    tues[13].innerHTML = '<strong>find the last position of samuel:<strong/> '+ frontendStudents.indexOf('samuel')
+    
+    tues[14].innerHTML = '<strong>find the last position of samuel:<strong/> '+ frontendStudents.indexOf('samuel')
+
+    //convert an array from object to string
+    tues[15].innerHTML = '<strong>convert to string:<strong/> '+ frontendStudents.join('-')
+
+    let name ='tega tayo chidinma princewill eni john jerry ope odion benson '+ frontendStudents.push(...names.split(' '))
+
+    //students with names less than 5 characters
+    tues[16].innerHTML = '<strong>less than five characters:<strong/> '+ frontendStudents.filter(name => name.length < 5)
+
+    //firt name less than 5 characters
+    tues[18].innerHTML = '<strong>firt name less than five characters:<strong/> '+ frontendStudents.find(name => name.length < 5)
+
+    //sort in ascending order
+    tues[19].innerHTML = '<strong>names sorted:<strong/> '+ frontendStudents.sort()
+
+    //make each name to start with an uppercase
+    tues[20].innerHTML = '<strong>Capitalise each name:<strong/> '+ frontendStudents.map(name => name.replace(name[0], name[0].toUppercase()))
+
+    console.log(students)
+</script>
+</html>
